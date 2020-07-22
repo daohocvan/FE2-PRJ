@@ -29,7 +29,7 @@ export default function CartItem(item, value){
                <div className="cart-icon"><i className="fa fa-trash"></i></div>
             </div>
             <div className="col-10 mx-auto col-lg-2">
-                <strong>Item total: $ {total}</strong>
+                <strong>$ {total}</strong>
             </div>
        </div>
     )

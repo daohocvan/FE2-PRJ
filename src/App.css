@@ -451,8 +451,25 @@ body{
  
 }
 
-/* .navbar-light .navbar-nav .nav-link{
-  color: #fff;
-} */
-.header-right{float:right}
+.navbar-light .navbar-nav .nav-link{
+  font-size: 1.2rem
+}
+
+.slide-container{
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  padding-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
 

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {ProductConsumer} from '../context';
 import {Link} from 'react-router-dom';
 import {ButtonContainer} from './Button';
+import Footer from './Footer';
 class Details extends Component {
   render(){
     return( 
@@ -52,6 +53,7 @@ class Details extends Component {
           </div>
         </div>
       </div>
+      
        ) 
      }}
     </ProductConsumer>)

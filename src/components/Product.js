@@ -6,9 +6,9 @@ import {ProductConsumer} from '../context';
 
 class Product extends Component {
   render(){
+
     const {id, name, img, price, inCart} = this.props.product;
     return(
-     
       <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
        
       <div className="card">
@@ -92,7 +92,7 @@ const  ProductWrapper = styled.div`
   background: var(--lightBlue);
   border: none;
   color: var(--mainWhite);
-  font-size: 2rem;
+  font-size: 1.5rem;
   border-radius: 0.5rem 0 0 0;
   transform: translate(100%, 100%);
   transition: all 1s ease-in-out;
