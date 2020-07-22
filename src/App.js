@@ -15,7 +15,6 @@ import Menu from './components/Menu';
 class App extends Component {
   render(){
     return <React.Fragment>
-   <Navbar/>
        <Menu/>
         <Switch>
           <Route exact path="/" component={ProductList}></Route>
