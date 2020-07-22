@@ -7,7 +7,7 @@ class Details extends Component {
     return( 
     <ProductConsumer>
      {value => {
-       const {id, title, company, img, info, price, inCart} =  value.detailProduct;
+       const {id, name, company, img, desc, price, inCart} =  value.detailProduct;
        return (
         <div className="container py-5">
         {/* title */}
@@ -15,11 +15,11 @@ class Details extends Component {
         {/* end of title */}
         <div className="row">
           <div className="col-10 mx-auto col-md-6 my-3">
-            <img src={img} className="img-fluid" alt="" style={{width: 200 + 'px'}, {height: 400 + 'px'}} />
+            <img src={'images/' + img} className="img-fluid" alt="" style={{width: 200 + 'px'}, {height: 400 + 'px'}} />
           </div>
           {/* prdoduct info */}
           <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
-            <h1>{title}</h1>
+            <h1>{name}</h1>
             <h4 className="text-title text-uppercase text-muted mt-3 mb-2">
               Company: <span className="text-uppercase">{company}</span>
             </h4>
@@ -32,7 +32,7 @@ class Details extends Component {
             <p className="text-capitalize font-weight-bold mt-3 mb-0">
               Some info about product :
             </p>
-            <p className="text-muted lead">{info}</p>
+            <p className="text-capitalize">{desc}</p>
             {/* buttons */}
             <div>
               <Link to="/">
