@@ -12,6 +12,7 @@
     "react-paypal-express-checkout": "^1.0.5",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-scroll-up-button": "^1.6.4",
     "react-slideshow-image": "^2.0.2",
     "styled-components": "^5.1.1"
   },

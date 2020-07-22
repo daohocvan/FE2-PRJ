@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
+import {TinyButton as ScrollUpButton} from "react-scroll-up-button";
 class Footer extends Component {
   render() {
     return (
@@ -10,14 +11,15 @@ class Footer extends Component {
             <div className="coccoc-alo-ph-circle-fill"></div>
             <div className="coccoc-alo-ph-img-circle"></div>
           </div>
-          <a href="#" id="return-to-top"><i className="fa fa-chevron-up" aria-hidden="true"></i></a>
+          {/* <a href="#" id="return-to-top"><i className="fa fa-chevron-up" aria-hidden="true"></i></a> */}
         </div>
-
+        <ScrollUpButton
+          ShowAtPosition={100}
+          AnimationDuration={1000}
+          ToggledStyle={{right: 10}}
+        />
       </div>
-
-
     )
   }
-
 }
 export default Footer
