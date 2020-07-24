@@ -2,11 +2,10 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {ProductConsumer} from '../context';
-
+import CustomChatbot from "./CustomChatbot";
 
 class Product extends Component {
   render(){
-
     const {id, name, img, price, inCart} = this.props.product;
     return(
       <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
@@ -50,6 +49,8 @@ class Product extends Component {
           </h5>
         </div>
       </div>
+      
+        <CustomChatbot a={this.props.product}/>
     </ProductWrapper>
     );  
   }

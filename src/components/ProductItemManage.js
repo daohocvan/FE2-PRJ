@@ -20,11 +20,11 @@ class ProductItemManage extends Component {
                         return(
                             <td className="text-center">
                             <button type="button" className="btn btn-warning" onClick={() => value.onUpdate(id)} >
-                                <span className="fa fa-pencil mr-5"></span>Sửa
+                                <span className="fa fa-pencil"></span>Sửa
                         </button>
                         &nbsp;
                         <button type="button" className="btn btn-danger" onClick={() => value.onDelete(id)}>
-                                <span className="fa fa-trash mr-5"></span>Xóa
+                                <span className="fa fa-trash"></span>Xóa
                         </button>
                         </td>
                         )

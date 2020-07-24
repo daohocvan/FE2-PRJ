@@ -73,7 +73,6 @@ class FormManage extends Component {
         
     }
   
-
     render() {
         var {id} = this.state;
         return (
@@ -86,7 +85,7 @@ class FormManage extends Component {
                             </div>
                             <div className="panel-body">
 
-                                <form id="formManage" onSubmit={() => {value.onSubmit(this.state)}} >
+                                <form id="formManage" onSubmit={(event) => {value.onSubmit(this.state, event.preventDefault())}} >
                                     <div className="form-group">
                                         <label>Name :</label>
                                         <input type="text" className="form-control" name="name" value={this.state.name} onChange={this.onChange} />
@@ -115,8 +114,8 @@ class FormManage extends Component {
 
                                     <br />
                                     <div className="text-center">
-                                        <button type="submit" className="btn btn-warning">Lưu lại</button>&nbsp;
-                                    <button type="button" className="btn btn-danger" onClick={this.onClear}>Clear</button>
+                                        <button type="submit" className="btn btn-warning">  <span className="fa fa-save mr-1"></span>Lưu lại</button>&nbsp;
+                                    <button type="button" className="btn btn-danger" onClick={this.onClear}><span className="fa fa-eraser mr-1"></span>Clear</button>
                                     </div>
                                 </form>
 

@@ -1,11 +1,14 @@
 import React from 'react'
-import { Redirect } from 'react-router-dom'
+
 export default function EmptyCart() {
 
     return (
-        <div>
-            {alert('Your cart is empty')}
-            {<Redirect to="/" />}
+        <div className="container mt-5">
+            <div className="row">
+                <div className="col-10 mx-auto text-center text-title text-capitalize">
+                    <h1>your cart is empty</h1>
+                </div>
+            </div>
         </div>
     )
 

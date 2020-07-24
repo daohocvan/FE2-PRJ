@@ -27,8 +27,8 @@ class Search extends Component {
                         <ProductConsumer>
                             {value => {
                                 return(
-                                    <button className="btn btn-primary" type="button" onClick={() => value.search(keyword)}>
-                                    <span className="fa fa-search mr-5"></span>Tìm
+                                    <button className="btn btn-primary ml-2" type="button" onClick={() => value.search(keyword)}>
+                                    <span className="fa fa-search mr-1"></span>Tìm
                                   </button>
                                 )
                             }}

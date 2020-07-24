@@ -2,6 +2,7 @@ import React from 'react'
 export default function CartItem(item, value){
   
     let {id, name, img, price, total, count} = item.item
+   
     const {increment, decrement, removeItem} = item.value
     return(
        <div class="row my-1 text-capitalize text-center">

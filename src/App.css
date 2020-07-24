@@ -447,12 +447,13 @@ body{
 }
 
 .bg-light{
-  background-color: yellowgreen !important;
+  background-color: #fed700 !important;
  
 }
 
 .navbar-light .navbar-nav .nav-link{
-  font-size: 1.2rem
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .slide-container{

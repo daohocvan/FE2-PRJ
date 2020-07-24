@@ -15,8 +15,8 @@ class Footer extends Component {
         </div>
         <ScrollUpButton
           ShowAtPosition={100}
-          AnimationDuration={1000}
-          ToggledStyle={{right: 10}}
+          AnimationDuration={800}
+          ToggledStyle={{right: 0}}
         />
       </div>
     )

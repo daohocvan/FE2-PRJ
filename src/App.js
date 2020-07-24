@@ -9,7 +9,6 @@ import Modal from './components/Modal';
 import ProductManage from './components/ProductManage';
 import Login from './components/Login';
 import Logout from './components/Logout';
-import Footer from './components/Footer';
 import Menu from './components/Menu';
 
 class App extends Component {

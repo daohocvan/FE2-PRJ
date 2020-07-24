@@ -57,7 +57,7 @@ class Login extends Component {
         const {username, password} = this.state;
         let accounts = Object.values(JSON.parse(localStorage.getItem('accounts')));
         let co = false;
-        
+        console.log(accounts)
         accounts.forEach((account) => {
             if(account.username === username && account.password === password){
                 co = true;
@@ -74,7 +74,7 @@ class Login extends Component {
            
            
         }else{
-           alert("fail")
+           alert("Login failed")
             
         
         }
