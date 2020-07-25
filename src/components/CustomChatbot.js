@@ -7,11 +7,6 @@ function CustomChatbot(a) {
 
   let result = ''
 
-
- 
-  
-  
-  
   const config = {
     width: "300px",
     height: "400px",
@@ -33,20 +28,21 @@ function CustomChatbot(a) {
     const { steps } = props;
     const name = steps.name.value;
   
-      if(name.toLowerCase() === 'iphone 7 plus'){
-       result = 'Name: Iphone 7 plus' + ' - Price: $328'
-      }
-      else if(name.toLowerCase() === 'iphone x'){
-        result = 'Name: Iphone X' + ' - Price: $479'
-       }
-       else if(name.toLowerCase() === 'samsung galaxy a70'){
-        result = 'Name: Samsung Galaxy A70' + ' - Price: $318'
-       }
-       else if(name.toLowerCase() === 'samsung galaxy m10'){
-        result = 'Name: Samsung Galaxy M10' + ' - Price: $115'
-       }
-    
-    
+    if (name.toLowerCase() === 'iphone 7 plus') {
+      result = 'Name: Iphone 7 plus' + ' - Price: $328'
+    }
+    else if (name.toLowerCase() === 'iphone x') {
+      result = 'Name: Iphone X' + ' - Price: $479'
+    }
+    else if (name.toLowerCase() === 'samsung galaxy a70') {
+      result = 'Name: Samsung Galaxy A70' + ' - Price: $318'
+    }
+    else if (name.toLowerCase() === 'samsung galaxy m10') {
+      result = 'Name: Samsung Galaxy M10' + ' - Price: $115'
+    }
+    else {
+      result = "Not found"
+    }
     return (
       <div>
         {result}
@@ -55,11 +51,11 @@ function CustomChatbot(a) {
   };
 
   Search.propTypes = {
-    steps: PropTypes.object,
+    steps: PropTypes.object
   };
 
   Search.defaultProps = {
-    steps: undefined,
+    steps: undefined
   };
 
   const steps = [

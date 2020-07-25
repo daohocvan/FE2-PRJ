@@ -72,7 +72,6 @@ class FormManage extends Component {
         }
         
     }
-  
     render() {
         var {id} = this.state;
         return (

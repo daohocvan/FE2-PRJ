@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { storeProducts } from './data';
 
 const ProductContext = React.createContext();
 
@@ -50,6 +49,7 @@ class ProductProvider extends Component {
             }
         }, this.addTotals);
     }
+    
     onToggleForm = () => {
         if (this.state.isDisplayForm && this.state.productUpdating !== null) {
             this.setState({ isDisplayForm: true, productUpdating: null });
@@ -59,15 +59,22 @@ class ProductProvider extends Component {
         }
 
     }
+
     onCloseForm = () => {
         this.setState({ isDisplayForm: false });
     }
+
     onShowForm = () => {
         this.setState({ isDisplayForm: true });
     }
+
     componentDidMount() {
-         this.setProducts();
-        
+        try{
+            this.setProducts()
+        }catch(err)
+        {
+            alert(err)
+        }  
     }
 
     search = keyword => {
@@ -84,20 +91,20 @@ class ProductProvider extends Component {
             })
         }
     }
-    setProducts = () => {
 
-        var storeProducts = Object.values(JSON.parse(localStorage.getItem('products')));
+    setProducts = () => {
+            var storeProducts = Object.values(JSON.parse(localStorage.getItem('products')));
             let tempProducts = [];
             storeProducts.forEach(item => {
                 const singleItem = { ...item };
                 tempProducts = [...tempProducts, singleItem];
 
             })
+
             this.setState(() => {
-                return { products: tempProducts };
+                return { products: tempProducts }
             })
     }
-
     
     onSubmit = (data) => {
         var { products } = this.state;
@@ -116,8 +123,6 @@ class ProductProvider extends Component {
         })
     }
 
-
-
     onDelete = (id) => {
         var { products } = this.state;
         let tempProducts = [...this.state.products];
@@ -128,6 +133,7 @@ class ProductProvider extends Component {
             return { products: products };
         })
     }
+
     onUpdate = (id) => {
         var { products } = this.state;
         let tempProducts = [...this.state.products];
@@ -137,10 +143,12 @@ class ProductProvider extends Component {
             return { productUpdating: products[index] };
         })
     }
+
     getItem = (id) => {
         const product = this.state.products.find(item => item.id === id);
         return product;
     }
+
     handleDetail = (id) => {
         const product = this.getItem(id);
         this.setState(() => {
@@ -188,7 +196,7 @@ class ProductProvider extends Component {
             },
             {
                 id: this.generateID(),
-                name: "	Iphone 7 Plus",
+                name: "Iphone 7 Plus",
                 img: "iphone7plus.jpg",
                 price: '328',
                 company: "Iphone",
@@ -198,17 +206,71 @@ class ProductProvider extends Component {
                 count: 0,
                 total: 0
             }
+            ,
+            {
+                id: this.generateID(),
+                name: "Iphone 11 Pro Max",
+                img: "ip11promax.jpg",
+                price: '1099',
+                company: "Iphone",
+                desc:
+                    'iPhone 11 Pro Max 256GB là chiếc iPhone cao cấp nhất trong bộ 3 iPhone Apple giới thiệu trong năm 2019 và quả thực chiếc smartphone này mang trong mình nhiều trang bị xứng đáng với tên gọi "Pro"',
+                inCart: false,
+                count: 0,
+                total: 0
+            }
+            ,
+            {
+                id: this.generateID(),
+                name: "Oppo A9",
+                img: "oppoa9.jpg",
+                price: '307',
+                company: "Oppo",
+                desc:
+                    "Kế thừa phiên bản OPPO A7 đã từng gây hot trước đó, OPPO A9 (2020) có nhiều sự cải tiến hơn về màn hình, camera và hiệu năng trải nghiệm.",
+                inCart: false,
+                count: 0,
+                total: 0
+            }
+            ,
+            {
+                id: this.generateID(),
+                name: "Realme 6i",
+                img: "realme6i.jpg",
+                price: '199',
+                company: "Realme",
+                desc:
+                    "Tiếp nối những thành công của Realme 5i, Realme tiếp tục cho ra đời người em kế nhiệm mang tên Realme 6i với hàng loạt những cải tiến như: MediaTek Helio G80, màn hình giọt nước, 4 camera sau,… đi kèm một mức giá vô cùng hấp dẫn",
+                inCart: false,
+                count: 0,
+                total: 0
+            }
+            ,
+            {
+                id: this.generateID(),
+                name: "Xiaomi Redmi Note 9",
+                img: "redminote9.jpg",
+                price: '264',
+                company: "Xiaomi",
+                desc:
+                    "Xiaomi Redmi Note 9 Pro 6GB/128GB là chiếc smartphone tầm trung mới nhất của Xiaomi gây ấn tượng với cấu hình mạnh mẽ, hệ thống bốn camera sau chất lượng, dung lượng pin khủng cùng mức giá bán cực kỳ hấp dẫn",
+                inCart: false,
+                count: 0,
+                total: 0
+            }
+            
         ]
         localStorage.setItem('products', JSON.stringify(products));
 
     }
+
     s4() {
         return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
     }
+
     generateID() {
         return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' + this.s4() + this.s4() + this.s4();
     }
-
 
 
     openModal = id => {
@@ -217,6 +279,7 @@ class ProductProvider extends Component {
             return { modalProduct: product, modalOpen: true };
         })
     }
+
     closeModal = id => {
         this.setState(() => {
             return { modalOpen: false }
@@ -256,6 +319,7 @@ class ProductProvider extends Component {
             }
         }, this.addTotals)
     }
+
     removeItem = (id) => {
         let tempProducts = [...this.state.products];
         let tempCart = [...this.state.cart]
@@ -271,6 +335,7 @@ class ProductProvider extends Component {
             }
         }, this.addTotals)
     }
+
     clearCart = () => {
 
         this.setState(() => {
@@ -302,7 +367,6 @@ class ProductProvider extends Component {
                 removeItem: this.removeItem,
                 clearCart: this.clearCart,
                 onGenerateData: this.onGenerateData
-
             }}>
                 {this.props.children}
             </ProductContext.Provider>
