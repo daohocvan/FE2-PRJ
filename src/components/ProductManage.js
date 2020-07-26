@@ -62,7 +62,7 @@ class ProductManage extends Component {
                     <Search />
 
                   </div>
-                  <ProductListManage />
+                  <ProductListManage products={value.products}/>
                 </div>
               </div>
               <ScrollUpButton

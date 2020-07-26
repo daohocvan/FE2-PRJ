@@ -3,7 +3,7 @@ import ChatBot from "react-simple-chatbot";
 import { ThemeProvider } from "styled-components";
 import PropTypes from 'prop-types';
 
-function CustomChatbot(a) {
+function CustomChatbot() {
 
   let result = ''
 

@@ -9,7 +9,7 @@ class ProductItemManage extends Component {
         const {index} = this.props;
         return (
             <tr>
-                <td>{index + 1}</td>
+                <td>{index}</td>
                 <td>{name}</td>
                 <td>{img}</td>
                 <td>{price}</td>

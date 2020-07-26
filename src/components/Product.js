@@ -50,7 +50,7 @@ class Product extends Component {
         </div>
       </div>
       
-        <CustomChatbot a={this.props.product}/>
+        <CustomChatbot/>
     </ProductWrapper>
     );  
   }
